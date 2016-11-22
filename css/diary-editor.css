@@ -1,0 +1,37 @@
+#diary-editor-wrapper {
+	display: block;
+	position: absolute;
+	top: 0px;
+	left: 0px;
+	margin: 4px;
+	width: calc(100% - 8px);
+	height: calc(100% - 40px);
+	padding: 8px 8px 40px 8px;
+}
+
+#diary-editor-toolbar {
+	width: 100%;
+	height: 50px;
+	position: absolute;
+	display: block;
+	bottom: 0px;
+	left: 0px;
+	background: #fff;
+	box-shadow: #AAA 0px -1px 2px;
+	padding: 8px;
+	overflow: hidden;
+}
+
+#diary-editor-toolbar i {
+	background: rgba(5, 68, 245, 0.74);
+	width: 32px;
+	height: 32px;
+	text-align: center;
+	line-height: 32px;
+	font-size: 25px;
+}
+
+#diary-editor {
+	min-width: 100%;
+	min-height: 100%;;
+}

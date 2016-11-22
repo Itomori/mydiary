@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no" />
+    <title></title>
+    <link href="css/mui.min.css" rel="stylesheet"/>
+    <link href="fonts/diarysans/font.css" rel="stylesheet"/>
+    <link href="css/index.css" rel="stylesheet"/>
+    <link href="css/diary-editor.css" rel="stylesheet"/>
+    <!-- 深き闇の幻想 -->
+    <link href="css/font-awesome/css/font-awesome.css" rel="stylesheet"/>
+    <link href="css/wi/css/weather-icons.css" rel="stylesheet" />
+    <script src="assets/templates.t" type="script/itotemplate"></script>
+</head>
+<body>
+	<div class="mui-content">
+		<div id="mainScWrapper">
+			<div id="mainSegmentedControl" class="mui-segmented-control">
+				<a class="mui-control-item" href="#entries-card">Entries</a>
+				<a class="mui-control-item" href="#calendar-card">Calendar</a>
+				<a class="mui-control-item mui-active" href="#diary-card">Diary</a>
+			</div>
+		</div>
+		<div id="mainContent">
+			<div id="entries-card" class="mui-control-content">
+				<div id="entries">
+					<p class="tshadow entries-month fnt-hg cstyle-bw-inv">9</p>
+					<div class="mui-card entry">
+						<div class="date-wrapper fnt-hg cstyle-c"><p class="date">3</p><p class="dayofweek">Thu</p></div>
+						<div class="time fnt-hg cstyle-c">
+							23:33
+							<div class="icons"><i class="wi wi-day-sunny"></i></div>
+						</div>
+						<div class="title cstyle-c">東京生活7</div>
+						<div class="summary">Four score and seven years ago our fathers brought forth on this continent, a new nation, conceived in Liberty, and dedicated to the proposition that all men are created equal.</div>
+					</div>
+					<div class="mui-card entry">
+						<div class="date-wrapper fnt-hg cstyle-c"><p class="date">3</p><p class="dayofweek">Thu</p></div>
+						<div class="time fnt-hg cstyle-c">
+							21:00
+							<div class="icons"><i class="wi wi-day-sunny"></i></div>
+						</div>
+						<div class="title cstyle-c">東京生活7</div>
+						<div class="summary">Four score and seven years ago our fathers brought forth on this continent, a new nation, conceived in Liberty, and dedicated to the proposition that all men are created equal.</div>
+					</div>
+					<p class="tshadow entries-month fnt-hg cstyle-bw-inv">8</p>
+					<div class="mui-card entry">
+						<div class="date-wrapper fnt-hg cstyle-c"><p class="date">3</p><p class="dayofweek">Thu</p></div>
+						<div class="time fnt-hg cstyle-c">
+							12:04
+							<div class="icons"><i class="wi wi-day-sunny"></i></div>
+						</div>
+						<div class="title cstyle-c">東京生活7</div>
+						<div class="summary">Four score and seven years ago our fathers brought forth on this continent, a new nation, conceived in Liberty, and dedicated to the proposition that all men are created equal.</div>
+					</div>
+				</div>
+			</div>
+			<div id="calendar-card" class="mui-control-content">
+				<div id="calendar">
+					<div class="calendar-bg"></div>
+					<div id="calendar-main" class="fnt-hg">
+						<div class="month">September</div>
+						<div class="date">13</div>
+						<div class="dayofweek">Tuesday</div>
+					</div>
+					<div id="calendar-down">
+						<span class="mui-icon mui-icon-arrowdown"></span>
+					</div>
+				</div>
+			</div>
+			<div id="diary-card" class="mui-control-content mui-active">
+				<div id="diary-editor-wrapper">
+					<div id="diary-editor"></div>
+				</div>
+				<div id="diary-editor-toolbar">
+					<i data-action="boldize" class="fa fa-bold" aria-hidden="true" id="bold"></i>
+  <!--<span id="italic">Italic</span>
+  &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+  <span id="removeItalic">Unitalic</span>
+  <span id="underline">Underline</span>
+  <span id="removeUnderline">Deunderline</span>
+  &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+  <span id="removeAllFormatting">Remove formatting</span>
+  &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+  <span id="setFontSize" class="prompt">Font size</span>
+  <span id="setFontFace" class="prompt">Font face</span>
+  </p>
+  <p>
+  <span id="setTextColour" class="prompt">Text colour</span>
+  <span id="setHighlightColour" class="prompt">Text highlight</span>
+  <span id="makeLink" class="prompt">Link</span>
+  </p>
+  <p>
+    <span id="increaseQuoteLevel">Quote</span>
+    <span id="decreaseQuoteLevel">Dequote</span>
+  &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+    <span id="makeUnorderedList">List</span>
+    <span id="removeList">Unlist</span>
+    <span id="increaseListLevel">Increase list level</span>
+    <span id="decreaseListLevel">Decrease list level</span>
+  &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+  <span id="insertImage" class="prompt">Insert image</span>
+  <span id="setHTML" class="prompt">Set HTML</span>
+  &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+    <span id="undo">Undo</span>
+    <span id="redo">Redo</span>-->
+				</div>
+			</div>
+		</div>
+	</div>
+	<script src="js/mui.min.js"></script>
+    <script src="inc/squire/squire.js"></script>
+    
+    <!-- AFTER ANY OTHER SCRIPTS -->
+    <script src="js/index.js"></script>
+</body>
+</html>

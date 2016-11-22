@@ -1,0 +1,195 @@
+html, body {
+	height: 100%;
+	overflow: hidden;
+	text-rendering: optimizeLegibility;
+	text-rendering: geometricPrecision;
+	font-smooth: always;
+	
+	font-smoothing: antialiased;
+	-moz-font-smoothing: antialiased;
+	-webkit-font-smoothing: antialiased;
+	-webkit-font-smoothing: subpixel-antialiased;
+}
+#mainScWrapper {
+	width: 100%;
+	height: 45px;
+	padding: 10px 12% 10px 12%;
+	margin-bottom: 4px;
+	box-shadow: #AAA 0px 1px 2px;
+	background: #fff;
+	position: fixed;
+	top: 0px;
+	left: 0px;
+	z-index: 2147483647;
+}
+#mainSegmentedControl > a {
+	line-height: 24px;
+	font-size: 12px;
+	height: 24px;
+}
+#mainContent {
+	width: 100%;
+	height: calc(100% - 45px);
+	margin-top: 45px;
+	overflow: auto;
+	position: absolute;
+}
+/* fix */
+.mui-segmented-control {
+    border-radius: 5px;
+}
+.mui-control-content {
+	height: 100%;
+	
+}
+/* entries Page */
+#entries {
+	display: block;
+	position: absolute;
+	padding-top: 2px;
+	background: url("../assets/012.jpg") fixed center center no-repeat;
+	background-size: cover;
+	width: 100%;
+	min-height: 100%;
+	width: 100%;
+}
+.entries-month{
+	display: block;
+	position: relative;
+	z-index: 45;
+	padding: 10px 0 10px 0;
+	line-height: 2em;
+	font-size: 2em;
+	text-align: center;
+	width: 100%;
+	color: rgb(250, 250, 250);
+}
+.entry {
+	overflow: auto;
+	zoom: 1;
+}
+.entry .date-wrapper{
+	display: table;
+	float: left;
+	width: 50px;
+	height: 100%;
+	text-align: center;
+}
+.entry .date{
+	font-size: 2.8em;
+	line-height: 1em;
+	margin-bottom: 0px;
+	margin-top: 10px;
+	color: #008AFF;
+}
+.entry .dayofweek {
+	color: #008AFF;
+}
+.entry .time{
+	margin-top: 10px;
+	line-height: 1.5em;
+	font-size: .6em;
+	color: #008AFF;
+}
+.entry .time .icons {
+	float: right;
+	height: 100%;
+	margin-right: 15px;
+}
+.entry .summary{
+	width: 70%;
+	overflow: hidden;
+	text-overflow:ellipsis;
+	white-space: nowrap;
+	font-size: 0.8em;
+	line-height: 1em;
+}
+
+/* Calendar Page */
+#calendar {
+	height: 100%;
+	position: absolute;
+	width: 100%;
+}
+.calendar-bg {
+	background: url('../assets/bg-calendar.png');
+	position: absolute;
+	top: 0px;
+	left: 0px;
+	width: 100%;
+	height: 100%;
+	z-index: -1;
+}
+#calendar-main {
+	z-index: 12;
+	width: 100%;
+	height: 58%;
+	background: #fff;
+	box-shadow: #999 0px 2px 3px;
+	color: rgb(0, 140, 200);
+}
+#calendar-main > div {
+	display: block;
+	text-align: center;
+}
+#calendar-main > .month {
+	padding-top: 15%;
+	font-size: 1.4em;
+	line-height: 1em;
+}
+#calendar-main > .date {
+	padding-top: 2%;
+	padding-bottom: 2%;
+	font-size: 8em;
+	line-height: 1em;
+	font-family: "DiarySans-Light";
+}
+#calendar-main > .dayofweek {
+	font-size: 1.1em;
+}
+#calendar-down {
+	position: fixed;
+	bottom: 1%;
+	left: calc(50% - 14px);
+	width: 28px;
+	height: 28px;
+	text-align: center;
+	line-height: 28px;
+	background: #fff;
+	color: rgb(0, 140, 200);
+	box-shadow: #999 0px 2px 3px;
+	border-radius: 28px 28px 28px;
+}
+#calendar-down > span {
+	line-height: 28px;
+	font-size: 14px;
+	vertical-align: middle;
+	font-weight: bold;
+}
+
+.bg-cover{
+	background: rgba(23, 23, 23, 0.4);
+	width: 100%;
+	height: 100%;
+	position: fixed;
+	display: block;
+	z-index: 2147483649;
+}
+.tshadow{
+	text-shadow: .5px .5px .5px #999;
+}
+.antialias-fix{
+	/* fix */
+	-webkit-text-stroke: 0.5px #000;
+}
+.fnt-hg {
+	font-family: "Hiragino Sans Kaku W3", "Hiragino Kaku Web";
+}
+.hidden {
+	display: none;
+}
+@font-face {
+	font-family: "Hiragino Kaku Web";
+	src: url("../fonts/hiragino-w3.ttf") format("truetype"),
+		url("../fonts/hiragino-w3.woff") format("woff");
+}
