@@ -6,6 +6,17 @@ window.$$ = function(selector){
 mydiary.initSquire = function(toolbar){
 	var areaId = "diary-editor";
 	var node = document.getElementById(areaId);
+	//Squire fix
+	Squire.prototype.testPresenceinSelection = function(name, action, format,
+		validation) {
+		var path = this.getPath(),
+		  test = (validation.test(path) | this.hasFormat(format));
+		if (name == action && test) {
+		  return true;
+		} else {
+		  return false;
+		}
+	  };
 	mydiary.editor = new Squire(node, {
 		blockTag: 'p',
 		blockAttributes: { 'class': 'paragraph' },
@@ -13,12 +24,11 @@ mydiary.initSquire = function(toolbar){
 			a: { 'target': '_blank' },
 		}
 	});
-	mui('#diary-editor-toolbar').on('click', function(e) {
+	$('#diary-editor-toolbar > i').on('tap', function(e) {
 		var editor = mydiary.editor;
-		//var action = this.data('action');
-		console.log(e, this);
+		var action = $(this).data('action');
 
-		/*test = {
+		var test = {
 		  value: $(this).data('action'),
 		  testBold: editor.testPresenceinSelection('bold',
 			action, 'B', (/>B\b/)),
@@ -52,15 +62,11 @@ mydiary.initSquire = function(toolbar){
 		} else if (test.isNotValue('makeLink') | test.isNotValue('insertImage') | test.isNotValue('selectFont')) {
 		  // do nothing these are dropdowns.
 		} else {
+			console.log(action);
 			editor[action]();
 			editor.focus();
-		}*/
+		}
 	 });
-	$$(toolbar).addEventListener('tap', function(e){
-		var id = e.target['id'],
-			value;
-			console.log(id);
-	});
 };
 
 (function(){
