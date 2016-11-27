@@ -1,59 +1,60 @@
 {
-	"index.html": {
-		"resources": [
-			"css/index.css",
-			"js/mui.min.js",
-			"css/mui.min.css",
-			"fonts/mui.ttf",
-			"js/index-webview.js",
-			"js/index.js",
-			"tabs/entries.html",
-			"fonts/hiragino-w3.ttf",
-			"assets/bg-calendar.png",
-			"fonts/segoeui.ttf",
-			"fonts/OpenSans-Light.ttf",
-			"fonts/diarysans/font.css",
-			"fonts/diarysans/DiarySans-Light.woff",
-			"css/font-awesome/css/font-awesome.css",
-			"css/wi/css/weather-icons.css",
-			"assets/water-color-dots.jpg",
-			"css/wi/font/weathericons-regular-webfont.woff",
-			"fonts/hiragino-w3.woff",
-			"assets/012.jpg",
-			"/assets/012.jpg",
-			"inc/squire/document.html",
-			"inc/squire/squire.js",
-			"css/diary-editor.css",
-			"css/font-awesome/fonts/fontawesome-webfont.woff",
-			"css/font-awesome/fonts/fontawesome-webfont.ttf",
-			"fonts/diarysans/DiarySans-Light.ttf",
-			"css/wi/font/weathericons-regular-webfont.ttf"
-		],
-		"refer": [
-			"tabs/diary.html",
-			"tabs/calendar.html",
-			"tabs/entries.html"
-		]
-	},
-	"tabs/entries.html": {
-		"resources": [
-			"js/mui.min.js",
-			"css/mui.min.css"
-		],
-		"refer": []
-	},
-	"tabs/diary.html": {
-		"resources": [
-			"js/mui.min.js",
-			"css/mui.min.css"
-		],
-		"refer": []
-	},
-	"tabs/calendar.html": {
-		"resources": [
-			"js/mui.min.js",
-			"css/mui.min.css"
-		],
-		"refer": []
-	}
+  "index.html": {
+    "resources": [
+      "css/index.css",
+      "js/mui.min.js",
+      "css/mui.min.css",
+      "fonts/mui.ttf",
+      "js/index-webview.js",
+      "js/index.js",
+      "tabs/entries.html",
+      "fonts/hiragino-w3.ttf",
+      "assets/bg-calendar.png",
+      "fonts/segoeui.ttf",
+      "fonts/OpenSans-Light.ttf",
+      "fonts/diarysans/font.css",
+      "fonts/diarysans/DiarySans-Light.woff",
+      "css/font-awesome/css/font-awesome.css",
+      "css/wi/css/weather-icons.css",
+      "assets/water-color-dots.jpg",
+      "css/wi/font/weathericons-regular-webfont.woff",
+      "fonts/hiragino-w3.woff",
+      "assets/012.jpg",
+      "/assets/012.jpg",
+      "inc/squire/document.html",
+      "inc/squire/squire.js",
+      "css/diary-editor.css",
+      "css/font-awesome/fonts/fontawesome-webfont.woff",
+      "css/font-awesome/fonts/fontawesome-webfont.ttf",
+      "fonts/diarysans/DiarySans-Light.ttf",
+      "css/wi/font/weathericons-regular-webfont.ttf",
+      "js/jquery.min.js"
+    ],
+    "refer": [
+      "tabs/diary.html",
+      "tabs/calendar.html",
+      "tabs/entries.html"
+    ]
+  },
+  "tabs/entries.html": {
+    "resources": [
+      "js/mui.min.js",
+      "css/mui.min.css"
+    ],
+    "refer": []
+  },
+  "tabs/diary.html": {
+    "resources": [
+      "js/mui.min.js",
+      "css/mui.min.css"
+    ],
+    "refer": []
+  },
+  "tabs/calendar.html": {
+    "resources": [
+      "js/mui.min.js",
+      "css/mui.min.css"
+    ],
+    "refer": []
+  }
 }

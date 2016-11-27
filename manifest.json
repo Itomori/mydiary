@@ -210,7 +210,8 @@
 					"css/font-awesome/fonts/fontawesome-webfont.woff",
 					"css/font-awesome/fonts/fontawesome-webfont.ttf",
 					"fonts/diarysans/DiarySans-Light.ttf",
-					"css/wi/font/weathericons-regular-webfont.ttf"
+					"css/wi/font/weathericons-regular-webfont.ttf",
+					"js/jquery.min.js"
 				],
 				"refer": [
 					"tabs/diary.html",
