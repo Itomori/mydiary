@@ -1,1 +1,20 @@
-null
+{
+  "index.html": {
+    "href": "index.html",
+    "resources": [
+      "fonts/hiragino/font.css",
+      "fonts/hiragino/hiragino-w3min.woff2",
+      "fonts/hiragino/hiragino-w3min.woff",
+      "fonts/hiragino/hiragino-w3min.ttf",
+      "fonts/hiragino/hiragino-w3min.svg",
+      "css/font-awesome/fonts/fontawesome-webfont.eot",
+      "css/font-awesome/fonts/fontawesome-webfont.woff2",
+      "css/font-awesome/fonts/fontawesome-webfont.svg",
+      "css/wi/font/weathericons-regular-webfont.eot",
+      "css/wi/font/weathericons-regular-webfont.woff2",
+      "css/wi/font/weathericons-regular-webfont.svg",
+      "assets/templates.t"
+    ],
+    "priority": 0
+  }
+}

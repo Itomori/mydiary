@@ -28,7 +28,9 @@
       "css/font-awesome/fonts/fontawesome-webfont.ttf",
       "fonts/diarysans/DiarySans-Light.ttf",
       "css/wi/font/weathericons-regular-webfont.ttf",
-      "js/jquery.min.js"
+      "js/jquery.min.js",
+      "fonts/hiragino/font.css",
+      "assets/templates.t"
     ],
     "refer": [
       "tabs/diary.html",
