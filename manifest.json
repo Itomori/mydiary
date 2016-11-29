@@ -155,7 +155,7 @@
 					"xhdpi": "unpackage/splash/out/720-1242.png", /*720P高分屏启动图片，分辨率：720x1242*/
 					"xxhdpi": "unpackage/splash/out/1080-1882.png"
 				}
-			},"debug":true
+			},"debug":false
 		}
 	},
 	"dependencies": {

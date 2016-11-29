@@ -73,6 +73,21 @@ mydiary.initSquire = function(toolbar){
 	mui.init();
 	
 	mydiary.initSquire('#diary-editor-toolbar');
+	
+	//Calendar Page funcs
+	(function(){
+		var _date = new Date;
+		var monthNlList = [ 'Zeroary', 'January', 'February', 'March', 'April', 'May', 'June', 
+				'July', 'August', 'September', 'October', 'November', 'December' ];
+		var dayOfWeekNlList = [ 'Sunday', 'Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Saturday' ];
+		var currDate = {
+			month: _date.getMonth() + 1,
+			monthNl: monthNlList[ _date.getMonth() + 1],
+			date: _date.getDate(),
+			dayOfWeek: _date.getDay(),
+			dayOfWeekNl: dayOfWeekNlList[ _date.getDay() ],
+		}
+	})
 	//for desktop, it doesnt run.
   	mui.plusReady(function(){
   		//plus.storage.setItem("lauchFlag", "true");plus.storage.getItem("lauchFlag")
