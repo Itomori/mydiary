@@ -86,8 +86,11 @@ mydiary.initSquire = function(toolbar){
 			date: _date.getDate(),
 			dayOfWeek: _date.getDay(),
 			dayOfWeekNl: dayOfWeekNlList[ _date.getDay() ],
-		}
-	})
+		};
+		$("#calendar-main > .month").html( currDate.monthNl );
+		$("#calendar-main > .date").html( currDate.date );
+		$("#calendar-main > .dayofweek").html( currDate.dayOfWeekNl );
+	})();
 	//for desktop, it doesnt run.
   	mui.plusReady(function(){
   		//plus.storage.setItem("lauchFlag", "true");plus.storage.getItem("lauchFlag")
