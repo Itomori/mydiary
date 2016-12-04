@@ -30,7 +30,8 @@
       "css/wi/font/weathericons-regular-webfont.ttf",
       "js/jquery.min.js",
       "fonts/hiragino/font.css",
-      "assets/templates.t"
+      "assets/templates.t",
+      "css/font-awesome/css/font-awesome.min.css"
     ],
     "refer": [
       "tabs/diary.html",

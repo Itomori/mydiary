@@ -1,9 +1,13 @@
 {
-	"@platforms": ["android", "iPhone", "iPad"],
+	"@platforms": [
+		"android",
+		"iPhone",
+		"iPad"
+	],
 	"id": "H5E909205",/*应用的标识，创建应用时自动生成，勿手动修改*/
 	"name": "MyDiary",/*应用名称，程序桌面图标名称*/
 	"version": {
-		"name": "0.0.2.1216",/*应用版本名称*/
+		"name": "0.0.2.1217",/*应用版本名称*/
 		"code": "83"
 	},
 	"description": "",/*应用描述信息*/
@@ -17,59 +21,46 @@
 		"url": "http://www.dcloud.io"
 	},
 	"permissions": {
-		
-        "Audio": {},
-        "Cache": {
-            "description": "管理应用缓存"
-        },
-        "Camera": {},
-        "Console": {
-            "description": "跟踪调试输出日志"
-        },
-        
-        
-        
-        "Events": {
-            "description": "应用扩展事件"
-        },
-        
-        
-        
-         "Invocation": {
-            "description": "使用Native.js能力"
-        },
-        
-        
-        
-        "Storage": {
-            "description": "管理应用本地数据"
-        },
-        
-        "Uploader": {
-            "description": "管理文件上传任务"
-        },
-        "Runtime": {
-            "description": "访问运行期环境"
-        },
-        "XMLHttpRequest": {
-            "description": "跨域网络访问"
-        },
-        "Zip": {
-            "description": "文件压缩与解压缩"
-        },
-        
-        "Maps": {},
-        
-        
-        "NativeUI":{
-        	"description": "原生UI控件"
-        },
-        "Navigator":{
-        	"description": "浏览器信息"
-        },
-        "NativeObj":{
-        	"description": "原生对象"
-        }
+
+		"Audio": {},
+		"Cache": {
+			"description": "管理应用缓存"
+		},
+		"Camera": {},
+		"Console": {
+			"description": "跟踪调试输出日志"
+		},
+
+
+
+		"Events": {
+			"description": "应用扩展事件"
+		},
+
+
+
+		"Invocation": {},
+
+
+
+		"Storage": {},
+
+		"Uploader": {},
+		"Runtime": {},
+		"XMLHttpRequest": {},
+		"Zip": {},
+
+
+
+
+		"NativeUI": {},
+		"Navigator": {},
+		"NativeObj": {},
+		"Gallery": {},
+		"Device": {},
+		"File": {},
+		"Webview": {},
+		"Downloader": {}
 	},
 	"plus": {
 		"splashscreen": {
@@ -92,9 +83,35 @@
 				"keystore": "",/*Android应用打包使用的密钥库文件*/
 				"password": "",/*Android应用打包使用密钥库中证书的密码*/
 				"aliasname": "",/*Android应用打包使用密钥库中证书的别名*/
-				"permissions": ["<uses-permission android:name=\"android.permission.RECORD_AUDIO\"/>","<uses-permission android:name=\"android.permission.MODIFY_AUDIO_SETTINGS\"/>","<uses-permission android:name=\"com.android.launcher.permission.INSTALL_SHORTCUT\"/>","<uses-permission android:name=\"android.permission.MOUNT_UNMOUNT_FILESYSTEMS\"/>","<uses-permission android:name=\"android.permission.READ_PHONE_STATE\"/>","<uses-permission android:name=\"android.permission.CHANGE_WIFI_STATE\"/>","<uses-permission android:name=\"android.permission.READ_LOGS\"/>","<uses-permission android:name=\"android.permission.ACCESS_WIFI_STATE\"/>","<uses-permission android:name=\"android.permission.ACCESS_COARSE_LOCATION\"/>","<uses-feature android:name=\"android.hardware.camera\"/>","<uses-permission android:name=\"android.permission.ACCESS_NETWORK_STATE\"/>","<uses-permission android:name=\"android.permission.WRITE_SETTINGS\"/>","<uses-permission android:name=\"com.android.launcher.permission.UNINSTALL_SHORTCUT\"/>","<uses-permission android:name=\"android.permission.CAMERA\"/>"]
+				"permissions": [
+					"<uses-permission android:name=\"android.permission.GET_PACKAGE_SIZE\"/>",
+					"<uses-permission android:name=\"android.permission.FORCE_BACK\"/>",
+					"<uses-permission android:name=\"android.permission.VIBRATE\"/>",
+					"<uses-permission android:name=\"android.permission.CLEAR_APP_CACHE\"/>",
+					"<uses-permission android:name=\"android.permission.STATUS_BAR\"/>",
+					"<uses-permission android:name=\"android.permission.ACCESS_WIFI_STATE\"/>",
+					"<uses-permission android:name=\"android.permission.ACCESS_CHECKIN_PROPERTIES\"/>",
+					"<uses-permission android:name=\"android.permission.READ_EXTERNAL_STORAGE\"/>",
+					"<uses-permission android:name=\"android.permission.ACCESS_NETWORK_STATE\"/>",
+					"<uses-permission android:name=\"com.android.launcher.permission.UNINSTALL_SHORTCUT\"/>",
+					"<uses-permission android:name=\"android.permission.CAMERA\"/>",
+					"<uses-permission android:name=\"android.permission.RECORD_AUDIO\"/>",
+					"<uses-permission android:name=\"android.permission.CLEAR_APP_USER_DATA\"/>",
+					"<uses-permission android:name=\"com.android.launcher.permission.INSTALL_SHORTCUT\"/>",
+					"<uses-permission android:name=\"android.permission.MODIFY_AUDIO_SETTINGS\"/>",
+					"<uses-permission android:name=\"android.permission.BIND_APPWIDGET\"/>",
+					"<uses-permission android:name=\"android.permission.INTERNET\"/>",
+					"<uses-permission android:name=\"android.permission.READ_PHONE_STATE\"/>",
+					"<uses-permission android:name=\"android.permission.READ_CALENDAR\"/>",
+					"<uses-permission android:name=\"android.permission.WAKE_LOCK\"/>",
+					"<uses-permission android:name=\"android.permission.CALL_PHONE\"/>",
+					"<uses-feature android:name=\"android.hardware.camera\"/>",
+					"<uses-permission android:name=\"android.permission.DELETE_CACHE_FILES\"/>"
+				]
 			},
-			"orientation": ["portrait-primary"],/*应用支持的方向，portrait-primary：竖屏正方向；portrait-secondary：竖屏反方向；landscape-primary：横屏正方向；landscape-secondary：横屏反方向*/
+			"orientation": [
+				"portrait-primary"
+			],/*应用支持的方向，portrait-primary：竖屏正方向；portrait-secondary：竖屏反方向；landscape-primary：横屏正方向；landscape-secondary：横屏反方向*/
 			"icons": {
 				"ios": {
 					"prerendered": true, /*应用图标是否已经高亮处理，在iOS6及以下设备上有效*/
@@ -107,7 +124,9 @@
 						"spotlight-retina": "unpackage/res/icons/58x58.png", /*iPhone高分屏Spotlight搜索程序图标，分辨率：58x58*/
 						"spotlight-retina7": "unpackage/res/icons/80x80.png",/*iPhone iOS7高分屏Spotlight搜索程序图标，分辨率：80x80*/
 						"settings-normal": "unpackage/res/icons/29x29.png", /*iPhone设置页面程序图标，分辨率：29x29*/
-						"settings-retina": "unpackage/res/icons/58x58.png","retina8":"unpackage/res/icons/180x180.png","settings-retina8":"unpackage/res/icons/87x87.png"
+						"settings-retina": "unpackage/res/icons/58x58.png",
+						"retina8": "unpackage/res/icons/180x180.png",
+						"settings-retina8": "unpackage/res/icons/87x87.png"
 					},
 					"ipad": {
 						"normal": "unpackage/res/icons/72x72.png", /*iPad普通屏幕程序图标，分辨率：72x72*/
@@ -155,113 +174,110 @@
 					"xhdpi": "unpackage/splash/out/720-1242.png", /*720P高分屏启动图片，分辨率：720x1242*/
 					"xxhdpi": "unpackage/splash/out/1080-1882.png"
 				}
-			},"debug":false
+			},
+			"debug": false
 		}
 	},
 	"dependencies": {
-	  "pages": {
-	    "index.html": {
-	      "resources": [
-	        "css/index.css",
-	        "js/mui.min.js",
-	        "css/mui.min.css",
-	        "fonts/mui.ttf",
-	        "js/index-webview.js",
-	        "js/index.js",
-	        "tabs/entries.html",
-	        "fonts/hiragino-w3.ttf",
-	        "assets/bg-calendar.png",
-	        "fonts/segoeui.ttf",
-	        "fonts/OpenSans-Light.ttf",
-	        "fonts/diarysans/font.css",
-	        "fonts/diarysans/DiarySans-Light.woff",
-	        "css/font-awesome/css/font-awesome.css",
-	        "css/wi/css/weather-icons.css",
-	        "assets/water-color-dots.jpg",
-	        "css/wi/font/weathericons-regular-webfont.woff",
-	        "fonts/hiragino-w3.woff",
-	        "assets/012.jpg",
-	        "/assets/012.jpg",
-	        "inc/squire/document.html",
-	        "inc/squire/squire.js",
-	        "css/diary-editor.css",
-	        "css/font-awesome/fonts/fontawesome-webfont.woff",
-	        "css/font-awesome/fonts/fontawesome-webfont.ttf",
-	        "fonts/diarysans/DiarySans-Light.ttf",
-	        "css/wi/font/weathericons-regular-webfont.ttf",
-	        "js/jquery.min.js",
-	        "fonts/hiragino/font.css",
-	        "fonts/hiragino/hiragino-w3min.woff2",
-	        "fonts/hiragino/hiragino-w3min.woff",
-	        "fonts/hiragino/hiragino-w3min.ttf",
-	        "fonts/hiragino/hiragino-w3min.svg",
-	        "css/font-awesome/fonts/fontawesome-webfont.eot",
-	        "css/font-awesome/fonts/fontawesome-webfont.woff2",
-	        "css/font-awesome/fonts/fontawesome-webfont.svg",
-	        "css/wi/font/weathericons-regular-webfont.eot",
-	        "css/wi/font/weathericons-regular-webfont.woff2",
-	        "css/wi/font/weathericons-regular-webfont.svg",
-	        "assets/templates.t"
-	      ],
-	      "refer": [
-	        "tabs/diary.html",
-	        "tabs/calendar.html"
-	      ],
-	      "priority": 0
-	    },
-	    "tabs/entries.html": {
-	      "resources": [
-	        "js/mui.min.js",
-	        "css/mui.min.css"
-	      ],
-	      "refer": [],
-	      "priority": 0
-	    },
-	    "tabs/diary.html": {
-	      "resources": [
-	        "js/mui.min.js",
-	        "css/mui.min.css"
-	      ],
-	      "refer": [],
-	      "priority": 0
-	    },
-	    "tabs/calendar.html": {
-	      "resources": [
-	        "js/mui.min.js",
-	        "css/mui.min.css"
-	      ],
-	      "refer": [],
-	      "priority": 0
-	    }
-	  },
-	  "idle": {
-	    "resources": [
-	      "css/wi/css/weather-icons-wind.css",
-	      "README",
-	      "css/mui.css",
-	      "css/font-awesome/css/font-awesome.min.css",
-	      "fonts/hiragino/hiragino-w3min.otf",
-	      "LICENSE",
-	      "css/wi/css/weather-icons-wind.min.css",
-	      "assets/splash-all.png",
-	      "css/font-awesome/css/font-awesome.css.map",
-	      "css/wi/css/weather-icons.min.css",
-	      "css/font-awesome/fonts/FontAwesome.otf",
-	      "js/mui.js",
-	      "fonts/diarysans/DiarySans-Light.otf"
-	    ]
-	  }
+		"pages": {
+			"index.html": {
+				"resources": [
+					"css/index.css",
+					"js/mui.min.js",
+					"css/mui.min.css",
+					"fonts/mui.ttf",
+					"js/index-webview.js",
+					"js/index.js",
+					"tabs/entries.html",
+					"fonts/hiragino-w3.ttf",
+					"assets/bg-calendar.png",
+					"fonts/segoeui.ttf",
+					"fonts/OpenSans-Light.ttf",
+					"fonts/diarysans/font.css",
+					"fonts/diarysans/DiarySans-Light.woff",
+					"css/font-awesome/css/font-awesome.css",
+					"css/wi/css/weather-icons.css",
+					"assets/water-color-dots.jpg",
+					"css/wi/font/weathericons-regular-webfont.woff",
+					"fonts/hiragino-w3.woff",
+					"assets/012.jpg",
+					"/assets/012.jpg",
+					"inc/squire/document.html",
+					"inc/squire/squire.js",
+					"css/diary-editor.css",
+					"css/font-awesome/fonts/fontawesome-webfont.woff",
+					"css/font-awesome/fonts/fontawesome-webfont.ttf",
+					"fonts/diarysans/DiarySans-Light.ttf",
+					"css/wi/font/weathericons-regular-webfont.ttf",
+					"js/jquery.min.js",
+					"fonts/hiragino/font.css",
+					"fonts/hiragino/hiragino-w3min.woff2",
+					"fonts/hiragino/hiragino-w3min.woff",
+					"fonts/hiragino/hiragino-w3min.ttf",
+					"fonts/hiragino/hiragino-w3min.svg",
+					"css/font-awesome/fonts/fontawesome-webfont.eot",
+					"css/font-awesome/fonts/fontawesome-webfont.woff2",
+					"css/font-awesome/fonts/fontawesome-webfont.svg",
+					"css/wi/font/weathericons-regular-webfont.eot",
+					"css/wi/font/weathericons-regular-webfont.woff2",
+					"css/wi/font/weathericons-regular-webfont.svg",
+					"assets/templates.t",
+					"css/font-awesome/css/font-awesome.min.css"
+				],
+				"refer": [
+					"tabs/diary.html",
+					"tabs/calendar.html"
+				],
+				"priority": 0
+			},
+			"tabs/entries.html": {
+				"resources": [
+					"js/mui.min.js",
+					"css/mui.min.css"
+				],
+				"refer": [],
+				"priority": 0
+			},
+			"tabs/diary.html": {
+				"resources": [
+					"js/mui.min.js",
+					"css/mui.min.css"
+				],
+				"refer": [],
+				"priority": 0
+			},
+			"tabs/calendar.html": {
+				"resources": [
+					"js/mui.min.js",
+					"css/mui.min.css"
+				],
+				"refer": [],
+				"priority": 0
+			}
+		},
+		"idle": {
+			"resources": [
+				"css/wi/css/weather-icons-wind.css",
+				"README.md",
+				"fonts/hiragino/hiragino-w3min.otf",
+				"LICENSE",
+				"css/wi/css/weather-icons-wind.min.css",
+				"assets/splash-all.png",
+				"css/font-awesome/css/font-awesome.css.map",
+				"css/wi/css/weather-icons.min.css",
+				"css/font-awesome/fonts/FontAwesome.otf",
+				"js/mui.js",
+				"fonts/diarysans/DiarySans-Light.otf"
+			]
+		}
 	},
-	"unpackage":[
-	  "css/mui.css",
-	  "js/mui.js",
-	  "unpackage/*.*",
-	  "assets/hiragino-w3.otf",
-	  "assets/spalsh-all.png",
-	  "LICENSE",
-	  "README",
-	  "dist/*.*",
-	  "assets/splash-all.png",
-	  ".gitignore"
+	"unpackage": [
+		"unpackage/*.*",
+		"assets/hiragino-w3.otf",
+		"assets/012.jpg",
+		"LICENSE",
+		"README.md",
+		"assets/splash-all.png",
+		".gitignore"
 	]
 }
