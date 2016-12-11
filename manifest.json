@@ -222,7 +222,13 @@
 					"css/wi/font/weathericons-regular-webfont.woff2",
 					"css/wi/font/weathericons-regular-webfont.svg",
 					"assets/templates.t",
-					"css/font-awesome/css/font-awesome.min.css"
+					"css/font-awesome/css/font-awesome.min.css",
+					"js/platform_compat.js",
+					"inc/font.js",
+					"js/test.js",
+					"inc/next.js",
+					"js/utils.js",
+					"inc/avg_color.js"
 				],
 				"refer": [
 					"tabs/diary.html",
