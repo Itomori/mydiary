@@ -15,18 +15,22 @@
     <script src="assets/templates.t" type="script/itotemplate"></script>
 </head>
 <body>
+	<div id="deep_dark"></div>
 	<div class="mui-content">
+	<div id="toppage">
+		toppage.
+	</div>
 	<div id="main-view">
-		<div id="mainScWrapper">
+		<div id="mainScWrapper" class="hidecategory" >
 			<div id="mainSegmentedControl" class="mui-segmented-control">
-				<a class="mui-control-item" href="#entries-card">Entries</a>
+				<a class="mui-control-item mui-active" href="#entries-card">Entries</a>
 				<a class="mui-control-item" href="#calendar-card">Calendar</a>
-				<a class="mui-control-item mui-active" href="#diary-card">Diary</a>
+				<a class="mui-control-item" href="#diary-card">Diary</a>
 			</div>
 			<p class="category">CATEGORY</p>
 		</div>
 		<div id="mainContent">
-			<div id="entries-card" class="mui-control-content">
+			<div id="entries-card" class="mui-control-content mui-active">
 				<div class="entries-bg"></div>
 				<div id="entries">
 					<p class="tshadow entries-month fnt-hg cstyle-bw-inv">9</p>
@@ -69,8 +73,7 @@
 					</div>
 				</div>
 				<div id="diary-toolbar">
-					
-				</div>
+					</div>
 			</div>
 			<div id="calendar-card" class="mui-control-content">
 				<div id="calendar">
@@ -85,7 +88,7 @@
 					</div>
 				</div>
 			</div>
-			<div id="diary-card" class="mui-control-content mui-active">
+			<div id="diary-card" class="mui-control-content">
 				<div id="diary-editor-wrapper">
 					<div id="diary-editor"></div>
 				</div>
@@ -111,8 +114,16 @@
 	<script src="js/jquery.min.js"></script>
 	<script src="js/mui.min.js"></script>
     <script src="inc/squire/squire.js"></script>
+    <script src="inc/font.js"></script>
+    <!-- libs -->
+    <script src="js/utils.js"></script>
+    <script src="inc/next.js"></script>
+    <script src="inc/avg_color.js"></script>
     
     <!-- AFTER ANY OTHER SCRIPTS -->
+    <script src="js/platform_compat.js"></script>
     <script src="js/index.js"></script>
+    
+    <script src="js/test.js"></script>
 </body>
 </html>

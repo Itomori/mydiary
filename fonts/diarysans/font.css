@@ -1,7 +1,6 @@
 @font-face {
   font-family: 'DiarySans-Light';
-  src: url('DiarySans-Light.woff') format('woff'),
-       url('DiarySans-Light.ttf') format('truetype');
+  src: url('DiarySans-Light.ttf');
   font-weight: normal;
   font-style: normal;
 }

@@ -10,6 +10,16 @@ html, body {
 	-webkit-font-smoothing: antialiased;
 	-webkit-font-smoothing: subpixel-antialiased;
 }
+#deep_dark {
+	display: none;
+}
+#main-view {
+	position: absolute;
+	top: 0px;
+	/*left: -100%;*/
+	width: 100%;
+	height: 100%;
+}
 #mainScWrapper {
 	width: 100%;
 	height: 61px;
@@ -17,12 +27,18 @@ html, body {
 	margin-bottom: 4px;
 	box-shadow: #AAA 0px 1px 2px;
 	background: #fff;
-	position: fixed;
+	position: absolute;
 	top: 0px;
 	left: 0px;
 	z-index: 2147483647;
+	transition: height ease-in-out .3s;
+	font-family: "Hiragino Kaku Web";
+}
+#mainScWrapper.hidecategory {
+	height: 45px;
 }
 #mainScWrapper .category {
+	z-index: -1;
 	line-height: 26px;
 	font-size: 12px;
 	width: 100%;
@@ -40,31 +56,36 @@ html, body {
 }
 #mainContent {
 	width: 100%;
-	height: calc(100% - 61px);
-	margin-top: 61px;
-	overflow: auto;
+	height: calc(100% - 45px);
+	margin-top: 45px;
+	overflow: hidden;
 	position: absolute;
 }
 /* fix */
 .mui-segmented-control {
-    border-radius: 5px;
+    /*border-radius: 5px;*/
+   box-shadow: 0 0 1px 0px white inset, 0 0 1px 0px white;
 }
 .mui-control-content {
 	height: 100%;
 	
 }
 /* entries Page */
+#entries-card {
+	height: 100%;
+}
 #entries {
 	display: block;
 	position: absolute;
-	padding-top: 2px;
 	background-size: cover;
 	width: 100%;
-	min-height: 100%;
-	width: 100%;
+	height: calc(100% - 45px); /* weird */
+	overflow-y: scroll;
+	overflow-x: hidden;
 }
 .entries-bg {
-	background: url("../assets/012.jpg") fixed center center no-repeat;
+	background-image: url("../assets/water-color-dots.jpg");
+	background-size: cover;
 	position: absolute;
 	top: 0px;
 	left: 0px;
