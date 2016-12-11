@@ -158,7 +158,7 @@ $(function(){
 		}
 	}
 	$("#mainSegmentedControl > a").on("tap", listenerSegCtrl);
-	listenerSegCtrl({ target: $("#mainScWrapper > .mui-active")[0] });
+	listenerSegCtrl({ target: $("#mainSegmentedControl .mui-active")[0] });
 	
 	//Entries Page funcs
 	//calc avg color
