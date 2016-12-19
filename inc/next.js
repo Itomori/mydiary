@@ -1,3 +1,10 @@
+/* next.js
+	Akiris 2016
+	Ver. 1617
+	Licensed under the MIT License.
+*/
+
+
 var Next = function(){
 	if ( this === window ) {return new arguments.callee};
 	this._signal = new Signal;
@@ -127,7 +134,7 @@ Next.prototype = {
 		
 		return this;
 	},
-	getListener: function( setterParam ) {
+	getRunnable: function( setterParam ) {
 		var self = this;
 		var nextstep = function() {
 			if ( self._queueIndex < self._queue.length ) {
@@ -141,22 +148,22 @@ Next.prototype = {
 		return nextstep;
 	},
 	go: function(){
-		this.getListener()();
+		this.getRunnable()();
 		return this;
 	}
 };
 
 /* Usage:
 	var next = new Next;
-	next.next( function( eventParam, setterParam, listener ) {
+	next.next( function( eventParam, setterParam, next ) {
 		//...your codes here.
 		setterParam[0] === 1; //true
-		listener();
-	}).next( function( eventParam, setterParam, listener ) {
+		next();
+	}).next( function( eventParam, setterParam, next ) {
 		//...your codes here.
-		//listener();
+		//next();
 	});
-	$( sth ).on( 'someev', next.getListener( 1 ) );
+	$( sth ).on( 'someev', next.getRunnable( 1 ) );
 	
 	//or watching 
  */
