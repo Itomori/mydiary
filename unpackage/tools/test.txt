@@ -1,0 +1,4 @@
+$language:zh-cn
+january:一月
+february:二月
+march:三月
