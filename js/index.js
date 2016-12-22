@@ -1,6 +1,8 @@
 //global fix for font.js
 var __fontsForFontJs = [];
 
+console.log(userLang = navigator.language || navigator.userLanguage);
+
 window.mydiary = {};
 window.$$ = function(selector){
 	return document.querySelector(selector);
@@ -115,6 +117,7 @@ $(function(){
 	
 	mydiary.initSquire('#diary-editor-toolbar');
 	//字体预加载
+	//$events: fontloaded
 	(function(){
 		var preloadList = [ 
 			[
@@ -135,7 +138,6 @@ $(function(){
 				if( preloaded === preloadList.length ) {
 					var _event = new CustomEvent( "fontloaded", { });
 					document.dispatchEvent( _event );
-					/*console.log("loaded!!!");*/
 				}
 			};
 			__fontsForFontJs[ ptr ].fontFamily = fontFamily;
@@ -171,15 +173,15 @@ $(function(){
 		img.onload = function(){
 			overall_rgb = utils.getAverageRGB( img );
 			var F = 0.78;
-			var R = 255 - ~~( (overall_rgb.r - 127) * F + 127 ),
+			/*var R = 255 - ~~( (overall_rgb.r - 127) * F + 127 ),
 				G = 255 - ~~( (overall_rgb.g - 127) * F + 127 ),
 				B = 255 - ~~( (overall_rgb.b - 127) * F + 127 );
-			$(".cstyle-bw-inv").css( { color: utils.fstr( 'rgb(${r}, ${g}, ${b})', { r: R, g: G, b: B } )} );
+			$(".cstyle-bw-inv").css( { color: utils.fstr( 'rgb(${r}, ${g}, ${b})', { r: R, g: G, b: B } )} );*/
 			//or
-			/*var Y = ~~(0.2126 * overall_rgb.r + 0.7152 * overall_rgb.g + 0.0722 * overall_rgb.b);
+			var Y = ~~(0.2126 * overall_rgb.r + 0.7152 * overall_rgb.g + 0.0722 * overall_rgb.b);
 			Y = 0;
 			Y = 255 - ~~( (Y - 127) * F + 127 );
-			$(".cstyle-bw-inv").css( { color: utils.fstr( 'rgb(${r}, ${g}, ${b})', { r: Y, g: Y, b: Y } )} );*/
+			$(".cstyle-bw-inv").css( { color: utils.fstr( 'rgb(${r}, ${g}, ${b})', { r: Y, g: Y, b: Y } )} );
 		};
 		img.src = entries_bgurl;
 		$("#deep_dark")[0].appendChild( img );
@@ -225,14 +227,16 @@ $(function(){
 			}, 1000);
 		});
   		
+  		plus.geolocation.getCurrentPosition( function ( p ) {
+			alert( "Geolocation\nLatitude:" + p.coords.latitude + "\nLongitude:" + p.coords.longitude + "\nAltitude:" + p.coords.altitude );
+		}, function ( e ) {
+			alert( "Geolocation error: " + e.message );
+		} );
   		//section final-close-splash
 
   		
   		plus.navigator.closeSplashscreen();
   		
-  		document.addEventListener( 'fontloaded', function(){
-  			console.log("loaded");
-  		});
   		
   	});
 });
