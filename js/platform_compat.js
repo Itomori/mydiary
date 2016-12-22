@@ -17,7 +17,7 @@ Compat = {
 	},
 	toast: function( param1, param2 ){
 		Compat.tryCode( function() {
-			plus.runtime.quit( param1, param2 );
+			mui.toast( param1, param2 );
 		} );
 	},
 }
