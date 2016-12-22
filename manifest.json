@@ -7,7 +7,7 @@
 	"id": "H5E909205",/*应用的标识，创建应用时自动生成，勿手动修改*/
 	"name": "MyDiary",/*应用名称，程序桌面图标名称*/
 	"version": {
-		"name": "0.0.2.1217",/*应用版本名称*/
+		"name": "0.0.2.1218",/*应用版本名称*/
 		"code": "83"
 	},
 	"description": "",/*应用描述信息*/
@@ -60,7 +60,7 @@
 		"Device": {},
 		"File": {},
 		"Webview": {},
-		"Downloader": {}
+		"Downloader": {},"Geolocation":{},"Maps":{}
 	},
 	"plus": {
 		"splashscreen": {
@@ -69,7 +69,7 @@
 		},
 		"runmode": "liberate",/*应用的首次启动运行模式，可取liberate或normal，liberate模式在第一次启动时将解压应用资源（Android平台File API才可正常访问_www目录）*/
 		"signature": "Sk9JTiBVUyBtYWlsdG86aHIyMDEzQGRjbG91ZC5pbw==",/*可选，保留给应用签名，暂不使用*/
-		"distribute": {
+		"distribute": {"plugins":{"maps":{"baidu":{"appkey_ios":"D1:B4:10:53:D6:F1:46:35:9A:16:F1:0D:CC:29:A1:F2:85:31:7C:4F;io.itomori.mydiary","appkey_android":"D1:B4:10:53:D6:F1:46:35:9A:16:F1:0D:CC:29:A1:F2:85:31:7C:4F;io.itomori.mydiary","appkey":"","description":""}}},
 			"apple": {
 				"appid": "",/*iOS应用标识，苹果开发网站申请的appid，如io.dcloud.HelloH5*/
 				"mobileprovision": "",/*iOS应用打包配置文件*/
