@@ -1,3 +1,5 @@
 unpackage/release
 dist/
 .Trashes/
+js/test.js
+Mydiary.build/
