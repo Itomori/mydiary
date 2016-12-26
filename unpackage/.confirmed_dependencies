@@ -39,7 +39,9 @@
       "inc/next.js",
       "fonts/hiragino/hiragino-w3min.ttf",
       "js/utils.js",
-      "inc/avg_color.js"
+      "inc/avg_color.js",
+      "css/wi/font/weathericons-regular-webfont.woff2",
+      "fonts/hiragino/hiragino-w3min.woff2"
     ],
     "refer": [
       "tabs/diary.html",

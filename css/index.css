@@ -34,9 +34,6 @@ html, body {
 	transition: height ease-in-out .3s;
 	font-family: "Hiragino Kaku Web";
 }
-#mainScWrapper.hidecategory {
-	height: 45px;
-}
 #mainScWrapper .category {
 	z-index: -1;
 	line-height: 26px;

@@ -148,22 +148,53 @@ $(function(){
 		}
 	})();
 	
-	//Segmented Control
+	var hidecategory_height = 45;
+	var normal_height = 61;
+	
+	/*	Immersed Mode
+		Modified from http://ask.dcloud.net.cn/article/422
+		RUNS BEFORE `segmented control`
+	*/
+	(function(){
+		var immersed = 0;
+		immersed = 30;
+		var ms = (/Html5Plus\/.+\s\(.*(Immersed\/(\d+\.?\d*).*)\)/gi).exec(navigator.userAgent);
+		if( ms && ms.length >= 3 ){ // 当前环境为沉浸式状态栏模式
+		    immersed=parseFloat(ms[2]);// 获取状态栏的高度
+		}
+		hidecategory_height += immersed;
+		normal_height += immersed;
+		$("#immersed_padding").css({height: immersed, width: "100%"});
+		$("#mainContent").css({
+			"margin-top": hidecategory_height,
+			"height": "calc(100% - " + hidecategory_height + "px)"
+		});
+		$("#entries").css({
+			"margin-top": (normal_height - hidecategory_height)
+		});
+	})();
+	
+	
+	/*Segmented Control*/
 	var listenerSegCtrl = function(e){
 		var href = $(e.target).attr("href");
 		if( href !== "#entries-card" ) {
-			$("#mainScWrapper").addClass("hidecategory");
+			$("#mainScWrapper").css({
+				height: hidecategory_height
+			});
 			$("#mainScWrapper .category").fadeOut( 200 );
 		} else {
-			$("#mainScWrapper").removeClass("hidecategory");
+			$("#mainScWrapper").css({
+				height: normal_height
+			});
 			setTimeout(function(){ $("#mainScWrapper .category").fadeIn( 200 ); }, 300);
 		}
 	}
 	$("#mainSegmentedControl > a").on("tap", listenerSegCtrl);
 	listenerSegCtrl({ target: $("#mainSegmentedControl .mui-active")[0] });
 	
-	//Entries Page funcs
-	//calc avg color
+	/*Entries Page funcs*/
+	/*calc avg color*/
 	(function() {
 		//http://stackoverflow.com/questions/14013131/javascript-get-background-image-url-of-div
 		var entries_bgurl = $(".entries-bg").css('background-image').slice(4, -1).replace(/"/g, "");
@@ -227,11 +258,11 @@ $(function(){
 			}, 1000);
 		});
   		
-  		plus.geolocation.getCurrentPosition( function ( p ) {
+  		/*plus.geolocation.getCurrentPosition( function ( p ) {
 			alert( "Geolocation\nLatitude:" + p.coords.latitude + "\nLongitude:" + p.coords.longitude + "\nAltitude:" + p.coords.altitude );
 		}, function ( e ) {
 			alert( "Geolocation error: " + e.message );
-		} );
+		} );*/
   		//section final-close-splash
 
   		
