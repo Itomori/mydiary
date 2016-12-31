@@ -3,6 +3,7 @@ html, body {
 	overflow: hidden;
 	text-rendering: optimizeLegibility;
 	text-rendering: geometricPrecision;
+	font-size: 1em;
 	font-smooth: always;
 	
 	font-smoothing: antialiased;
@@ -13,12 +14,59 @@ html, body {
 #deep_dark {
 	display: none;
 }
-#main-view {
+#toppage {
+	z-index: -1;
 	position: absolute;
 	top: 0px;
-	/*left: -100%;*/
 	width: 100%;
 	height: 100%;
+}
+#mycard > .container {
+	position: absolute;
+	bottom: 2%;;
+	left: 2%;
+}
+#mycard {
+	width: 100%;
+	height: 17%;
+	display: inline-block;
+	position: relative;
+	background: url('../assets/card-bg.jpg');
+}
+
+#mycard .avatar {
+	width: 50px;
+	height: 50px;
+	top: 0px;
+	left: 0px;
+	border-radius: 50%;
+	float: left;
+}
+#mycard .info {
+	float:left;
+	width: auto;
+	height: 50px;
+	margin-left: 10px;
+	margin-top: 10px;
+}
+#mycard p {
+	margin: 0;
+}
+#mycard .info .nickname {
+	color: #fff;
+	font-weight: 500;
+	font-size: 1.4em;
+	vertical-align: baseline;
+}
+
+#main-view {
+	z-index: 2;
+	position: absolute;
+	top: 0px;
+	/*right: -110%;*/
+	width: 100%;
+	height: 100%;
+	box-shadow: #666 -2px 0px 4px;
 }
 #mainScWrapper {
 	width: 100%;
@@ -76,7 +124,7 @@ html, body {
 	position: absolute;
 	background-size: cover;
 	width: 100%;
-	height: calc(100% - 45px); /* weird */
+	height: calc(100% - 61px); /* weird */
 	overflow-y: scroll;
 	overflow-x: hidden;
 }
@@ -150,7 +198,7 @@ html, body {
 	width: 100%;
 }
 .calendar-bg {
-	background: url('../assets/bg-calendar.png');
+	background: url('../assets/card-bg.jpg');
 	position: absolute;
 	top: 0px;
 	left: 0px;
@@ -180,7 +228,8 @@ html, body {
 	padding-bottom: 2%;
 	font-size: 8em;
 	line-height: 1em;
-	font-family: "DiarySans-Light";
+	/*font-family: "DiarySans-Light";*/
+	font-weight: 100;
 }
 #calendar-main > .dayofweek {
 	font-size: 1.1em;
@@ -205,11 +254,15 @@ html, body {
 	font-weight: bold;
 }
 
+#diary-card {
+	background: #fefefe;
+}
+
 #diary-toolbar {
 	width: 100%;
 	height: 45px;
 	display: block;
-	position: fixed;
+	position: absolute;
 	z-index: 2147483647;
 	bottom: 0px;
 	left: 0px;
@@ -236,4 +289,13 @@ html, body {
 }
 .hidden {
 	display: none;
+}
+.f-l {
+	float: left;
+}
+.f-r {
+	float: right;
+}
+.clf {
+	clear: both;
 }
