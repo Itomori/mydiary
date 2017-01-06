@@ -206,7 +206,11 @@
 					"js/test.js",
 					"inc/next.js",
 					"js/utils.js",
-					"inc/avg_color.js"
+					"inc/avg_color.js",
+					"i18n/i18n.js",
+					"js/diaryProvider/diaryTemplate.js",
+					"assets/default-avatar.jpg",
+					"assets/card-bg.jpg"
 				],
 				"refer": [
 					"tabs/diary.html",

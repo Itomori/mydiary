@@ -41,7 +41,12 @@
       "js/utils.js",
       "inc/avg_color.js",
       "css/wi/font/weathericons-regular-webfont.woff2",
-      "fonts/hiragino/hiragino-w3min.woff2"
+      "fonts/hiragino/hiragino-w3min.woff2",
+      "i18n/i18n.js",
+      "css/font-awesome/fonts/fontawesome-webfont.woff2",
+      "js/diaryProvider/diaryTemplate.js",
+      "assets/default-avatar.jpg",
+      "assets/card-bg.jpg"
     ],
     "refer": [
       "tabs/diary.html",
