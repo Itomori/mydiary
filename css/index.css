@@ -15,11 +15,12 @@ html, body {
 	display: none;
 }
 #toppage {
-	z-index: -1;
+	z-index: 0;
 	position: absolute;
 	top: 0px;
 	width: 100%;
 	height: 100%;
+	background: #fff;
 }
 #mycard > .container {
 	position: absolute;
@@ -35,8 +36,8 @@ html, body {
 }
 
 #mycard .avatar {
-	width: 50px;
-	height: 50px;
+	width: 25%;
+	height: 25%;
 	top: 0px;
 	left: 0px;
 	border-radius: 50%;
@@ -58,12 +59,71 @@ html, body {
 	font-size: 1.4em;
 	vertical-align: baseline;
 }
+#topothers{
+	width: 100%;
+	height: 83%;
+	position: absolute;
+	top: 17%;
+	left: 0;
+}
+#category_list {
+	width: 100%;
+	margin-bottom: 22px;
+	max-height: calc(100% - 45px);
+	overflow-y: auto;
+	overflow-x: hidden;
+}
+#category_list ul {
+	list-style: none;
+	margin: 0;
+	padding-left: 7%;
+}
+#category_list ul li {
+	width: 100%;
+	height: 50px;
+	line-height: 50px;
+	font-size: 12px;
+	padding-left: 6px;
+	border-bottom: #666 1px solid;
+}
+#category_list ul li i{
+	margin-right: 12px;
+	vertical-align: middle;
+}
+#top_search {
+	position: absolute;
+	bottom: 0px;
+	left: 0px;
+	width: 100%;
+	height: 45px;
+	padding: 8px 12px 8px 12px;
+}
+#top_search_icon {
+	position: absolute;
+	left: 12px;
+	top: 8px;
+	width: 29px;
+	height: 29px;
+	line-height: 29px;
+	text-align: center;
+	font-size: 20px;
+	vertical-align: bottom;
+	transform: scaleX(-1);
+}
+#top_search_input {
+	width: 100%;
+	height: 100%;
+	border-radius: 8px;
+	border: 0;
+	padding-left: 29px;
+	background: #ef3e3e;
+}
 
 #main-view {
 	z-index: 2;
 	position: absolute;
 	top: 0px;
-	/*right: -110%;*/
+	right: -110%;
 	width: 100%;
 	height: 100%;
 	box-shadow: #666 -2px 0px 4px;
@@ -129,7 +189,7 @@ html, body {
 	overflow-x: hidden;
 }
 .entries-bg {
-	background-image: url("../assets/water-color-dots.jpg");
+	background-image: url("../assets/card-bg.jpg"); /*water-color-dots*/
 	background-size: cover;
 	position: absolute;
 	top: 0px;
@@ -209,9 +269,9 @@ html, body {
 #calendar-main {
 	z-index: 12;
 	width: 100%;
-	height: 70%;
+	height: 60%;
 	background: #fff;
-	box-shadow: #999 0px 2px 3px;
+	box-shadow: #f0f0f0 0px 1px 2px;
 	color: rgb(0, 140, 200);
 }
 #calendar-main > div {
@@ -224,12 +284,12 @@ html, body {
 	line-height: 1em;
 }
 #calendar-main > .date {
-	padding-top: 2%;
+	padding-top: 3%;
 	padding-bottom: 2%;
 	font-size: 8em;
 	line-height: 1em;
 	/*font-family: "DiarySans-Light";*/
-	font-weight: 100;
+	font-family: "sans-serif-light","Roboto Light", "STHeitiSC-Light";
 }
 #calendar-main > .dayofweek {
 	font-size: 1.1em;
