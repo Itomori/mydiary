@@ -29,7 +29,7 @@ html, body {
 }
 #mycard {
 	width: 100%;
-	height: 17%;
+	height: 18%;
 	display: inline-block;
 	position: relative;
 	background: url('../assets/card-bg.jpg');
@@ -49,6 +49,7 @@ html, body {
 	height: 50px;
 	margin-left: 10px;
 	margin-top: 10px;
+	z-index: 1;
 }
 #mycard p {
 	margin: 0;
@@ -66,6 +67,16 @@ html, body {
 	top: 17%;
 	left: 0;
 }
+#mycard > .gradient-bg {
+	background-image: -webkit-gradient(linear, 0% 100%, 0% 0%, from(#ff6600), to(rgba(0,0,0,0)));
+	width: 100%;
+	height: 65px;
+	position: absolute;
+	bottom: 0px;
+	left: 0px;
+	z-index: 0;
+}
+
 #category_list {
 	width: 100%;
 	margin-bottom: 22px;
