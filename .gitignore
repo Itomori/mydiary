@@ -1,7 +1,7 @@
 unpackage/release
 dist/
 .Trashes/
-js/test.js
+js/test/
 Mydiary.build/
 unpackage/.confirmed_dependencies
 unpackage/.dependencies
