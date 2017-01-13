@@ -3,3 +3,5 @@ dist/
 .Trashes/
 js/test.js
 Mydiary.build/
+unpackage/.confirmed_dependencies
+unpackage/.dependencies
