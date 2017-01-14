@@ -1,8 +1,3 @@
-//global fix for font.js
-var __fontsForFontJs = [];
-
-console.log(userLang = navigator.language || navigator.userLanguage);
-
 window.mydiary = {};
 window.$$ = function(selector){
 	return document.querySelector(selector);
@@ -116,37 +111,6 @@ $(function(){
 	});
 	
 	mydiary.initSquire('#diary-editor-toolbar');
-	//字体预加载
-	//$events: fontloaded
-	(function(){
-		var preloadList = [ 
-			[
-				'DiarySans-Light', 
-				'fonts/diarysans/DiarySans-Light.ttf'
-			],
-			[
-				'Hiragino Kaku Web',
-				'fonts/hiragino/hiragino-w3min.ttf'
-			]
-		];
-		var preloaded = 0;
-		var __preloadFont = function( fontFamily, fontUrl ){
-			var ptr = __fontsForFontJs.length;
-			__fontsForFontJs[ ptr ] = new Font();
-			__fontsForFontJs[ ptr ].onload = function() {
-				preloaded++;
-				if( preloaded === preloadList.length ) {
-					var _event = new CustomEvent( "fontloaded", { });
-					document.dispatchEvent( _event );
-				}
-			};
-			__fontsForFontJs[ ptr ].fontFamily = fontFamily;
-			__fontsForFontJs[ ptr ].src = fontUrl;
-		};
-		for( var i = 0; i < preloadList.length; i++ ) {
-			__preloadFont( preloadList[i][0], preloadList[i][1] );
-		}
-	})();
 	
 	var hidecategory_height = 45;
 	var normal_height = 61;
@@ -157,7 +121,6 @@ $(function(){
 	*/
 	(function(){
 		var immersed = 0;
-		immersed = 30;
 		var ms = (/Html5Plus\/.+\s\(.*(Immersed\/(\d+\.?\d*).*)\)/gi).exec(navigator.userAgent);
 		if( ms && ms.length >= 3 ){ // 当前环境为沉浸式状态栏模式
 		    immersed=parseFloat(ms[2]);// 获取状态栏的高度
@@ -171,6 +134,9 @@ $(function(){
 		});
 		$("#entries").css({
 			"margin-top": (normal_height - hidecategory_height)
+		});
+		$("#mycard").css({
+			"padding-top": immersed
 		});
 	})();
 	
@@ -191,6 +157,7 @@ $(function(){
 		}
 	}
 	$("#mainSegmentedControl > a").on("tap", listenerSegCtrl);
+	//triggers it first
 	listenerSegCtrl({ target: $("#mainSegmentedControl .mui-active")[0] });
 	
 	/*Entries Page funcs*/
@@ -198,19 +165,22 @@ $(function(){
 	(function() {
 		//http://stackoverflow.com/questions/14013131/javascript-get-background-image-url-of-div
 		var entries_bgurl = $(".entries-bg").css('background-image').slice(4, -1).replace(/"/g, "");
+		console.log(entries_bgurl);
 		
 		var img = document.createElement('img');
 		var overall_rgb;
 		img.onload = function(){
 			overall_rgb = utils.getAverageRGB( img );
-			var F = 0.78;
+			var F = 0.68;
 			/*var R = 255 - ~~( (overall_rgb.r - 127) * F + 127 ),
 				G = 255 - ~~( (overall_rgb.g - 127) * F + 127 ),
 				B = 255 - ~~( (overall_rgb.b - 127) * F + 127 );
 			$(".cstyle-bw-inv").css( { color: utils.fstr( 'rgb(${r}, ${g}, ${b})', { r: R, g: G, b: B } )} );*/
+			//test
+			
+			//end
 			//or
 			var Y = ~~(0.2126 * overall_rgb.r + 0.7152 * overall_rgb.g + 0.0722 * overall_rgb.b);
-			Y = 0;
 			Y = 255 - ~~( (Y - 127) * F + 127 );
 			$(".cstyle-bw-inv").css( { color: utils.fstr( 'rgb(${r}, ${g}, ${b})', { r: Y, g: Y, b: Y } )} );
 		};
@@ -221,7 +191,7 @@ $(function(){
 	//Calendar Page funcs
 	(function(){
 		var _date = new Date;
-		var monthNlList = [ 'Zeroary', 'January', 'February', 'March', 'April', 'May', 'June', 
+		var monthNlList = [ 'zeroary', 'january', 'february', 'march', 'april', 'may', 'june', 
 				'July', 'August', 'September', 'October', 'November', 'December' ];
 		var dayOfWeekNlList = [ 'Sunday', 'Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Saturday' ];
 		var currDate = {
