@@ -259,11 +259,16 @@
 	},
 	"unpackage": [
 		"unpackage/*.*",
-		"assets/hiragino-w3.otf",
-		"assets/012.jpg",
 		"LICENSE",
 		"README.md",
 		"assets/splash-all.png",
-		".gitignore"
+		".gitignore",
+		"js/*.*",
+		"inc/*.*",
+		"css/*.*",
+		"i18n/*.*",
+		"build-scripts/*.*",
+		"build.sh"
+
 	],"fullscreen":false
 }
