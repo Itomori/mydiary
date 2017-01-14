@@ -3,6 +3,11 @@
 # Author: AkimotoAkari (Akiris Wu) 2017
 
 # Origin: http://blog.csdn.net/xiuzhentianting/article/details/53364078
+onerror(){
+	# Some kinds of event listeners
+	echo -e "\n\033[31mOops! Something went wrong...\033[0m"
+	exit 1
+}
 getabspathoffile(){
 	echo $(cd `dirname $0`; pwd)
 }
@@ -27,9 +32,17 @@ addattr(){
 }
 _proc(){
 	# $1: file hint, $2: dir, $3: preprocessor type
-	echo -e "\033[32m[ 1/10] Compressing $1...\033[0m"
+	echo -e "\033[32m[$4/$5] Compressing $1...\033[0m"
 	echo ""
+	
 	foreachd "$base/$2" "$output/$2" "$3" 0
+	ret=$?
+	if [ $ret != 0 ]; then
+		onerror
+		# should not return..
+		return 1
+	fi
+	return 0
 }
 
 foreachd(){
@@ -61,8 +74,7 @@ foreachd(){
 				echo 
 			else
 				# Arguments: $1: input file, $2: output file path (abs. path)
-				echo -e "\t$relpath"
-				echo -e "\t" "./build-scripts/proc-$3.sh" "$filepath" "$outfile"
+				echo -e "\t\033[34m$relpath\033[0m"
 				if ! "./build-scripts/proc-$3.sh" "$filepath" "$outfile"; then
 					echo -e "\033[31mError occurred while processing file: \033[0m$filepath"
 					return 1
@@ -71,9 +83,11 @@ foreachd(){
 		else
 			if [ "$4" ]; then
 				foreachd "$filepath" "$2/`getrelpath "$1" "$filepath"`" "$3" "$4"
+				return $? # Bubbling!
 			fi
 		fi
 	done
+	return 0
 }
 
 # MAIN ENTRY IS HERE
@@ -81,6 +95,8 @@ base=`dirname $0`
 output="$base/build"
 
 echo -e "\033[35m\x20\x5f\x5f\x20\x20\x5f\x5f\x20\x20\x20\x20\x20\x20\x20\x5f\x5f\x5f\x5f\x20\x20\x5f\x0a\x7c\x20\x20\x5c\x2f\x20\x20\x7c\x5f\x20\x20\x20\x5f\x7c\x20\x20\x5f\x20\x5c\x28\x5f\x29\x20\x5f\x5f\x20\x5f\x20\x5f\x20\x5f\x5f\x20\x5f\x20\x20\x20\x5f\x0a\x7c\x20\x7c\x5c\x2f\x7c\x20\x7c\x20\x7c\x20\x7c\x20\x7c\x20\x7c\x20\x7c\x20\x7c\x20\x7c\x2f\x20\x5f\x60\x20\x7c\x20\x27\x5f\x5f\x7c\x20\x7c\x20\x7c\x20\x7c\x0a\x7c\x20\x7c\x20\x20\x7c\x20\x7c\x20\x7c\x5f\x7c\x20\x7c\x20\x7c\x5f\x7c\x20\x7c\x20\x7c\x20\x28\x5f\x7c\x20\x7c\x20\x7c\x20\x20\x7c\x20\x7c\x5f\x7c\x20\x7c\x0a\x7c\x5f\x7c\x20\x20\x7c\x5f\x7c\x5c\x5f\x5f\x2c\x20\x7c\x5f\x5f\x5f\x5f\x2f\x7c\x5f\x7c\x5c\x5f\x5f\x2c\x5f\x7c\x5f\x7c\x20\x20\x20\x5c\x5f\x5f\x2c\x20\x7c\x0a\x20\x20\x20\x20\x20\x20\x20\x20\x7c\x5f\x5f\x5f\x2f\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x7c\x5f\x5f\x5f\x2f\033[37m\tMyDiary Prebuilder\033[0m\n"
+echo -e "\n\033[32m[1/4] Cleaning up...\033[0m"
+rm -rf ./build/*.*
 _proc "CSS files" "css" "css" 1 3
 _proc "JavaScript files" "js" "js" 2 3
 _proc "inc JavaScript files" "inc" "js" 3 3
