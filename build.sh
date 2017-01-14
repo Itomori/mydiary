@@ -31,11 +31,11 @@ addattr(){
 	echo "$dirabs/$filename.$2.$fileext"
 }
 _proc(){
-	# $1: file hint, $2: dir, $3: preprocessor type
+	# $1: file hint, $2: dir, $3: preprocessor type, $4, $5, $6: restricted file extname
 	echo -e "\033[32m[$4/$5] Compressing $1...\033[0m"
 	echo ""
 	
-	foreachd "$base/$2" "$output/$2" "$3" 0
+	foreachd "$base/$2" "$output/$2" "$3" 0 "$6"
 	ret=$?
 	if [ $ret != 0 ]; then
 		onerror
@@ -47,7 +47,7 @@ _proc(){
 
 foreachd(){
 	# $1: basepath, $2: output dir (w/ type suffix), 
-	# $3: processor type, $4: recursive, 0: yes
+	# $3: processor type, $4: recursive, 0: yes, $5: restricted file extname
 	# NOTE: all paths SHOULD NOT end with /.
 	for filepath in ${1}/*; do
 		if [ ! -d "$filepath" ]; then
@@ -63,6 +63,15 @@ foreachd(){
 			#first check if dirs exist.
 			if [ ! -d `dirname "$outfile"` ]; then
 				mkdir -p `dirname "$outfile"`
+			fi
+
+			if [ -n "$5" ] && [ `getextname "$filename"` != "$5" ]; then
+				if ! cp "$filepath" "$2/`basename "$filepath"`" ; then
+					echo -e "\033[31mError occurred while copying file: \033[0m$filepath"
+					return 1
+				fi
+				echo
+				continue
 			fi
 
 			if contains "$filename" ".min." ; then
@@ -82,7 +91,7 @@ foreachd(){
 			fi
 		else
 			if [ "$4" ]; then
-				foreachd "$filepath" "$2/`getrelpath "$1" "$filepath"`" "$3" "$4"
+				foreachd "$filepath" "$2/`getrelpath "$1" "$filepath"`" "$3" "$4" "$5"
 				return $? # Bubbling!
 			fi
 		fi
