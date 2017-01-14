@@ -1,6 +1,25 @@
+NOTE THAT THE FOLLOWING FILES ARE OTHERWISE LICENSED, 
+AND ARE ONLY FOR AUTHOR'S (AkimotoAkari) PERSONAL USE:
+fonts/diarysans/*.*
+fonts/hiragino/*.*
+
+THE FOLLOWING FILES ARE OTHERWISE LICENSED, 
+SEE THEIR PROJECT HOMES FOR DETAILS:
+fonts/font-awesome/*.*
+fonts/wi/*.*
+fonts/mui.ttf
+inc/squire/*.*
+inc/sha1.min.js
+inc/font.js
+js/jquery.min.js
+js/mui.js
+js/mui.min.js
+unpackage/*.* (except 'splash', 'release', 'res' and 'tools' subfolders 
+and their contents)
+
 MIT License
 
-Copyright (c) 2016 Akimoto Akari
+Copyright (c) 2017 Akimoto Akari
 
 Permission is hereby granted, free of charge, to any person obtaining a copy
 of this software and associated documentation files (the "Software"), to deal
