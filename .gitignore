@@ -6,3 +6,4 @@ Mydiary.build/
 unpackage/.confirmed_dependencies
 unpackage/.dependencies
 build/
+.vscode/
