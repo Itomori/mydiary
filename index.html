@@ -132,20 +132,56 @@
 		</div>
 	</div>
 	</div>
-	<script src="build/js/jquery.min.js"></script>
+	<script>
+window._fire=function(event){var _event=new CustomEvent(event,[].slice.call(arguments,1));document.dispatchEvent(_event);};
+window._once=function(ev,cb){var evl=function(){document.removeEventListener(ev,evl);cb();};document.addEventListener(ev,evl);};
+window.$c=console.log.bind(console);
+//DEV SWITCH
+var dev_sw = true;
+var path_prefix = dev_sw ? "build/" : "";
+var scriptlist = [
+["js/jquery.min","js/mui.min","inc/squire.min","js/utils"],
+"inc/next","inc/avg_color","i18n/i18n",
+"js/diaryProvider/diaryTemplate",
+"js/platform_compat","js/index","js/test/test"];
+_once("alljsloaded",function(){
+	console.log("all loaded");
+});
+(function(){
+	var load=function(slist,cb){
+		var i,l,j=0,script,col=function(){j++;if(j===l) cb();};
+		if(!(slist instanceof Array)) slist=[slist];
+		l=slist.length;
+		for(i=0;i<l;i++){
+			script=document.createElement('script');
+			script.type='text/javascript';
+			if(script.readyState) script.onreadystatechange=function(){
+				if(script.readyState==="loaded"||script.readyState==="complete"){
+					script.onreadystatechange=null;col();}}
+			else script.onload=col;
+			script.src=slist[i]+((!dev_sw&&slist[i].indexOf(".min.")<0)?".min.js":".js");
+			document.body.appendChild(script);
+		}
+	};
+	var i,l=scriptlist.length,c=-1;
+	var cb=function() {if(++c===l){_fire("alljsloaded");}else{load(scriptlist[c],cb);}};
+	cb();
+})();
+	</script>
+	<!--<script src="build/js/jquery.min.js"></script>
 	<script src="build/js/mui.min.js"></script>
     <script src="build/inc/squire.min.js"></script>
-    <!-- libs -->
+    <!-- libs --
     <script src="build/js/utils.js"></script>
     <script src="build/inc/next.js"></script>
     <script src="build/inc/avg_color.js"></script>
     <script src="build/i18n/i18n.js"></script>
     <script src="build/js/diaryProvider/diaryTemplate.js"></script>
     
-    <!-- AFTER ANY OTHER SCRIPTS -->
+    <!-- AFTER ANY OTHER SCRIPTS --
     <script src="build/js/platform_compat.js"></script>
     <script src="build/js/index.js"></script>
     
-    <script src="build/js/test/test.js"></script>
+    <script src="build/js/test/test.js"></script>-->
 </body>
 </html>
