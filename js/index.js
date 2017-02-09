@@ -2,9 +2,14 @@ window.mydiary = {};
 window.$$ = function(selector){
 	return document.querySelector(selector);
 }
-window._fire = function( event ) {
-	var _event = new CustomEvent( event, [].slice.call( arguments, 1 ) );
-	document.dispatchEvent( _event );
+
+mydiary.vars = {
+	topHeadBgAvgColor: "rgb(0,0,0,0)",
+	topHeadBg: "url('')",
+	diaryBg: {
+		"hash-1": "url('')",
+		"hash-2": "url('')",
+	}
 }
 
 mydiary.initSquire = function(toolbar){
@@ -132,9 +137,9 @@ $(function(){
 			"margin-top": hidecategory_height,
 			"height": "calc(100% - " + hidecategory_height + "px)"
 		});
-		$("#entries").css({
+		/*$("#entries").css({
 			"margin-top": (normal_height - hidecategory_height)
-		});
+		});*/
 		$("#mycard").css({
 			"padding-top": immersed
 		});
@@ -153,7 +158,10 @@ $(function(){
 			$("#mainScWrapper").css({
 				height: normal_height
 			});
-			setTimeout(function(){ $("#mainScWrapper .category").fadeIn( 200 ); }, 300);
+			setTimeout(function(){
+				 if( $("#mainSegmentedControl > .mui-active").attr("href") === "#entries-card" ) $("#mainScWrapper .category").fadeIn( 200 ); 
+				 //fix high-speed switching bug
+			}, 300);
 		}
 	}
 	$("#mainSegmentedControl > a").on("tap", listenerSegCtrl);
