@@ -7,3 +7,4 @@ unpackage/.confirmed_dependencies
 unpackage/.dependencies
 build/
 .vscode/
+.head_of_files.txt
