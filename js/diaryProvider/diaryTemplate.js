@@ -52,6 +52,12 @@ var initialData = {
 		}
 	}
 };
+var _tojson = function(s){return JSON.stringify(s);};
+var initialData = {
+	"_DDRVINF": _tojson({ DBDRVVER: 1218, STRUCTVER: 1218 }),
+	"____ROOT": _tojson({ LENG: 1, PREV: "        ", NEXT: "        ", SUBS: "C   2013" }),
+	"C   2013": _tojson({ LENG: 1, PREV: "        ", NEXT: "        "})
+}
 var templates = {
 	/* exported: date, dow, time, wi-icons, title, summary */
 	entry: '<div class="mui-card entry"><div class="date-wrapper fnt-hg cstyle-c"><p class="date">${date}</p><p class="dayofweek">${dow}</p>' + 
@@ -63,7 +69,7 @@ var templates = {
 
 DiaryTemplate = {
 	loadEntries: function( data ) {
-		
+		var html = "";
 	},
 	loadCategories: function( data ) {
 		
