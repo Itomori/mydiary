@@ -37,7 +37,8 @@
     "gulp-uglify": "^2.0.1",
     "less": "^2.7.2",
     "less-plugin-autoprefix": "^1.5.1",
-    "through2": "^2.0.3"
+    "through2": "^2.0.3",
+    "yargs": "^7.0.1"
   },
   "dependencies": {
     "font-awesome": "^4.7.0",

@@ -16,6 +16,7 @@ let gulp = require('gulp'),
     fs = require('fs');
 let { i18n, style, getThirdparty } = require('./gulp/tasks');
 let config = require('./gulp/config.json');
+let argv = require('./gulp/resolve_argv.js');
 
 /*
 clean
@@ -110,11 +111,11 @@ gulp.task('directcopy', function () {
 })
 
 gulp.task('inject', function () {
-    let presetOpts = Object.assign(config, {
-        isRelease: !!gulp.env.release,
-        apiRoot: gulp.env['api-root'] || '/api/v0',
-        misc: JSON.parse(gulp.env['preset-misc'] || '{}')
-    });
+    let presetOpts = Object.assign({
+        isRelease: !!argv.release,
+        apiRoot: argv['api-root'] || '/api/v0',
+        misc: JSON.parse(argv['preset-misc'] || '{}')
+    }, config);
     return gulp.src('./src/index.html')
         .pipe(
             inject(
