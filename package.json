@@ -21,12 +21,18 @@
   },
   "homepage": "https://github.com/Itomori/mydiary#readme",
   "devDependencies": {
+    "browser-sync": "^2.18.8",
     "gulp": "^3.9.1",
+    "gulp-cached": "^1.1.1",
     "gulp-clean": "^0.3.2",
     "gulp-clean-css": "^3.0.3",
     "gulp-cli": "^1.2.2",
     "gulp-concat": "^2.6.1",
+    "gulp-header-license": "^1.0.9",
     "gulp-inject": "^4.2.0",
+    "gulp-inject-string": "^1.1.0",
+    "gulp-rename": "^1.2.2",
+    "gulp-sequence": "^0.4.6",
     "gulp-sourcemaps": "^2.4.1",
     "gulp-uglify": "^2.0.1",
     "less": "^2.7.2",
@@ -34,7 +40,6 @@
     "through2": "^2.0.3"
   },
   "dependencies": {
-    "device.js": "^0.1.2",
     "font-awesome": "^4.7.0",
     "gulp-less": "^3.3.0",
     "jquery": "^3.1.1"

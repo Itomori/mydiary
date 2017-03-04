@@ -1,0 +1,4 @@
+$language:zh-cn
+showalert-title-alert:Hello World
+showalert-html-hw:Hello World!
+showalert-btns-ok:确认

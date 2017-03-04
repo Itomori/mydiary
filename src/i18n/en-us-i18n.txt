@@ -1,0 +1,4 @@
+$language:en-us
+showalert-title-alert:Hello World
+showalert-html-hw:Hello World!
+showalert-btns-ok:OK

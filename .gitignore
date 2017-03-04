@@ -1,9 +1,7 @@
 unpackage/release
 dist/
 .Trashes/
-js/test/
 unpackage/.confirmed_dependencies
 unpackage/.dependencies
 .vscode/
-.head_of_files.txt
 node_modules/

@@ -1,0 +1,22 @@
+{
+	"3rdparty": {
+		"base": "./node_modules/",
+		"js": [
+			"/jquery/dist/jquery.min.js"
+		],
+		"style": [
+			"font-awesome/css/font-awesome.min.css"
+		]
+	},
+	"preset-misc": {},
+	"sync": [
+		"./dist/manifest.json", 
+		"./dist/.project"
+	],
+	"comments": [
+		"In 3rdparty, paths to plugin is based on 3rdparty.base.",
+		"In assets: every element is like [ source, dest ], ",
+		"and dest is based on dist path. Note that for a folder you may need ",
+		"to add a / suffix."
+	]
+}

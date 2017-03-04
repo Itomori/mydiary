@@ -1,3 +1,0 @@
-ï»¿$language:zh-cn
-$charset:gb2312
-april:ËÄÔÂ
