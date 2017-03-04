@@ -3,8 +3,6 @@ var Scroll = function(){
 }
 
 Scroll.prototype = {
-	scrollableElem: null,
-	loadingElem: null,
 	scrollEventElem: null,
 	scrollStatus: {
 		initialized: false,
@@ -12,6 +10,7 @@ Scroll.prototype = {
 		refreshing: false,
 		animationRunning: false,
 		touchStart: 0,
+		y: 0
 	},
 	onscrolling: function( top ) {
 		//nothing
@@ -47,12 +46,12 @@ Scroll.prototype = {
 	 * @param {HTMLElement} scrollableElem
 	 * @param {HTMLElement} loadingElem
 	 */
-	init: function( scrollEventElem, scrollableElem, loadingElem ) {
+	init: function( scrollEventElem ) {
 		if ( this.scrollStatus.initialized ) return this;
 
-		this.scrollableElem = scrollableElem;
-		this.loadingElem = loadingElem;
+		this.scrollEventElem = scrollEventElem;
 
+		this.scrollStatus.initialized = true;
 		return this;
 	},
 	l2uLimit: function( limit ) {
@@ -72,100 +71,42 @@ Scroll.prototype = {
 		this.scrollEventElem.addEventListener( 'touchmove', function( event ) {
 			var touch = event.targetTouches[0]; 
 
-			var x = touch.pageY - touchStart;
+			var x = touch.pageY - self.scrollStatus.touchStart;
 
 			var y = self.scrollAlgo(x);
-			typeof y === "number" ? ( self.scrollableElem.style.top = y, self.onscrolling( self.scrollEventElem, self.scrollableElem, self.loadingElem ) ) : void 0;
+			self.scrollStatus.y = y;
+			if( typeof y === "number" ) 
+				self.onscrolling( y );
 		}, false );
 
 		this.scrollEventElem.addEventListener( 'touchend', function( event ) {
 			self.scrollStatus.touchStart = 0;
-			self.onscrollend( self.scrollableElem.offsetTop, self.scrollEventElem, self.scrollableElem, self.loadingElem );
+			self.onscrollend( self.scrollStatus.y );
+			self.scrollStatus.y = 0;
 		}, false );
 	}
 }
-/*var scroll = document.querySelector('#entries-wrapper');
-   var outerScroller = document.querySelector('#entries-wrapper');
-   var touchStart = 0;
-   var touchDis = 0;
-   outerScroller.addEventListener('touchstart', function(event) { 
-        var touch = event.targetTouches[0]; 
-        // 把元素放在手指所在的位置 
-           touchStart = touch.pageY; 
-           console.log(touchStart);
-        }, false);
-   outerScroller.addEventListener('touchmove', function(event) { 
-        var touch = event.targetTouches[0]; 
-        console.log(touch.pageY + 'px');  
-
-		var x = /*scroll.offsetTop + *touch.pageY-touchStart;
-		if(x>0) {
-			var y, t1, t2;
-			t1 = Math.sqrt(x)*3.27;
-			t2 = x*0.65;
-			y = t1 > t2 ? t2 : t1;
-			scroll.style.top = y + 'px';
-		} else if ( x < 0 ) {
-			x = 0-x;
-			var y, t1, t2;
-			t1 = Math.sqrt(x)*3.27;
-			t2 = x*0.65;
-			y = t1 > t2 ? t2 : t1;
-			y = 0-y;
-			scroll.style.top = y + 'px';
-		}
-		console.log('y', y);
-        /*touchStart = touch.pageY;*
-        touchDis = touch.pageY-touchStart;
-        }, false);
-   outerScroller.addEventListener('touchend', function(event) { 
-        touchStart = 0;
-        var top = scroll.offsetTop;
-        if(top>70)refresh();
-        if(top>0){
-            var time = setInterval(function(){
-              scroll.style.top = scroll.offsetTop -2+'px';
-			  if(scroll.offsetTop<=0){clearInterval(time);scroll.style.top = "0px;"}
-            },1)
-        } else if ( top < -70 ) {
-			console.log("next");
-			
-		}
-        if ( top < 0 ) {
-            var time = setInterval(function(){
-              scroll.style.top = scroll.offsetTop +2+'px';
-			  if(scroll.offsetTop>=0){clearInterval(time);scroll.style.top = "0px;"}
-            },1)
-        }
-    }, false);
-   function refresh(){
-        console.log("refreshing");
-   }*/
 //test
-var sc = new Scroll();
-sc.init( document.querySelector('#entries-wrapper'), document.querySelector('#entries'), null );
+$(function(){var sc = new Scroll();
+sc.init( document.querySelector('#entries-wrapper') );
 sc.bindEvents();
+sc.u2lLimit(70);
 sc.onscrolling = function( top ) {
 	console.log( top );
 };
-sc.onscrollend = function( top, lis, scroll, lo ) {
+sc.onscrollend = function( top ) {
 	if(top>70)refresh();
 	if(top>0){
-		var time = setInterval(function(){
-			scroll.style.top = scroll.offsetTop -2+'px';
-			if(scroll.offsetTop<=0){clearInterval(time);scroll.style.top = "0px"}
-		},1)
+		
 	} else if ( top < -70 ) {
 		console.log("next");
 		
 	}
 	if ( top < 0 ) {
-		var time = setInterval(function(){
-			scroll.style.top = scroll.offsetTop +2+'px';
-			if(scroll.offsetTop>=0){clearInterval(time);scroll.style.top = "0px"}
-		},1)
+		
 	}
 }
 function refresh(){
         console.log("refreshing");
    }
+});
