@@ -47,7 +47,7 @@ html, body {
 	height: 16%;
 	display: inline-block;
 	position: relative;
-	background: url('../assets/card-bg.jpg');
+	background: url('../images/card-bg.jpg');
 }
 
 #mycard .avatar {
@@ -240,7 +240,7 @@ html, body {
 	height: auto;
 }
 .entries-bg {
-	background-image: url("../assets/card-bg.jpg"); /*water-color-dots*/
+	background-image: url("../images/card-bg.jpg"); /*water-color-dots*/
 	background-size: cover;
 	position: absolute;
 	top: 0px;
@@ -309,7 +309,7 @@ html, body {
 	width: 100%;
 }
 .calendar-bg {
-	background: url('../assets/card-bg.jpg');
+	background: url('../images/card-bg.jpg');
 	position: absolute;
 	top: 0px;
 	left: 0px;

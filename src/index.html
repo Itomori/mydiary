@@ -3,15 +3,10 @@
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no" />
-    <title></title>
-    <link href="css/mui.min.css" rel="stylesheet"/>
-    <link href="fonts/diarysans/font.css" rel="stylesheet"/>
-    <link href="fonts/hiragino/font.css" rel="stylesheet"/>
-    <link href="css/index.css" rel="stylesheet"/>
-    <link href="css/diary-editor.css" rel="stylesheet"/>
-    <!-- 深き闇の幻想 -->
-    <link href="fonts/font-awesome/css/font-awesome.min.css" rel="stylesheet"/>
-    <link href="fonts/wi/css/weather-icons.css" rel="stylesheet" />
+    <title>MyDiary</title>
+    <!-- inject:css -->
+	<!-- endinject -->
+	<!-- intron:1 -->
 </head>
 <body>
 	<div id="deep_dark"></div>
@@ -24,7 +19,7 @@
 	<div id="toppage">
 		<div id="mycard">
 			<div class="gradient-bg"></div>
-			<div class="container"><img class="avatar f-l" src="assets/default-avatar.jpg">
+			<div class="container"><img class="avatar f-l" src="images/default-avatar.jpg">
 			<div class="info">
 				<p class="nickname" lang="ja">赤座　燈里</p>
 				<p class="details">details</p>
@@ -201,7 +196,7 @@
 	</div>
 	</div>
 	<script>
-window._fire=function(event){var _event=new CustomEvent(event,[].slice.call(arguments,1));document.dispatchEvent(_event);};
+/*window._fire=function(event){var _event=new CustomEvent(event,[].slice.call(arguments,1));document.dispatchEvent(_event);};
 window._once=function(ev,cb){var evl=function(){document.removeEventListener(ev,evl);cb();};document.addEventListener(ev,evl);};
 window.$c=console.log.bind(console);
 //DEV SWITCH
@@ -234,22 +229,11 @@ _once("alljsloaded",function(){
 	var i,l=scriptlist.length,c=-1;
 	var cb=function() {if(++c===l){_fire("alljsloaded");}else{load(scriptlist[c],cb);}};
 	cb();
-})();
+})();*/
 	</script>
-	<!--<script src="build/js/jquery.min.js"></script>
-	<script src="build/js/mui.min.js"></script>
-    <script src="build/inc/squire.min.js"></script>
-    <!-- libs --
-    <script src="build/js/utils.js"></script>
-    <script src="build/inc/next.js"></script>
-    <script src="build/inc/avg_color.js"></script>
-    <script src="build/i18n/i18n.js"></script>
-    <script src="build/js/diaryProvider/diaryTemplate.js"></script>
-    
-    <!-- AFTER ANY OTHER SCRIPTS --
-    <script src="build/js/platform_compat.js"></script>
-    <script src="build/js/index.js"></script>
-    
-    <script src="build/js/test/test.js"></script>-->
+	<!-- inject:pre:js -->
+	<!-- endinject -->
+	<!-- inject:js -->
+	<!-- endinject -->
 </body>
 </html>

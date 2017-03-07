@@ -85,6 +85,7 @@ gulp.task('i18n', function () {
 gulp.task('js3rd', function () {
     return gulp.src(getThirdparty('js'))
         .pipe(rename({ suffix: '.min' }))
+        .pipe(rename({ prefix: 'pre-' }))
         .pipe(gulp.dest('./dist/js/'))
         .pipe(reload({
             stream: true
@@ -108,9 +109,11 @@ gulp.task('js', function () {
 gulp.task('directcopy', function () {
     return gulp.src('./src/directcopy/**/*')
     .pipe(gulp.dest('./dist/'));
-})
+});
 
 gulp.task('inject', function () {
+    //Mar 7 2017 - fixed injection seq.
+    
     let presetOpts = Object.assign({
         isRelease: !!argv.release,
         apiRoot: argv['api-root'] || '/api/v0',
@@ -119,11 +122,23 @@ gulp.task('inject', function () {
     return gulp.src('./src/index.html')
         .pipe(
             inject(
+                gulp.src(['./dist/js/**/pre-*.js'], { read: false }),
+                {
+                    ignorePath: '/dist',
+                    removeTags: true,
+                    starttag: '<!-- inject:pre:{{ext}} -->'
+                }
+            )
+        )
+        .pipe(
+            inject(
                 gulp.src(['./dist/js/**/*.js',
+                    '!./dist/js/**/pre-*.js',
                     './dist/css/**/*.css'], { read: false }),
                 {
                     ignorePath: '/dist',
-                    removeTags: true
+                    removeTags: true,
+                    starttag: '<!-- inject:{{ext}} -->'
                 }
             )
         )
@@ -146,6 +161,7 @@ gulp.task('sync', function () {
 
 //This should work and looks pretty good:
 gulp.task('default', sequence(
+    'clean',
     ['i18n', 'style3rd', 'js3rd'],
     ['style', 'js', 'assets'],
     'directcopy',
