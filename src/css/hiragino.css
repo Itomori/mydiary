@@ -1,0 +1,11 @@
+@font-face {
+	font-family: 'Hiragino Kaku Web';
+
+	src: 
+		url('../font/hiragino-w3min.woff2') format('woff2'),
+		url('../font/hiragino-w3min.woff') format('woff'),
+		url('../font/hiragino-w3min.ttf') format('truetype'),
+		url('../font/hiragino-w3min.svg') format('svg');
+	font-weight: normal;
+	font-style: normal;
+}

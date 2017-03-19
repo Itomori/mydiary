@@ -13,6 +13,7 @@ let gulp = require('gulp'),
     reload = browserSync.reload,
     cached = require('gulp-cached'),
     sequence = require('gulp-sequence'),
+    babel = require('gulp-babel'),
     fs = require('fs');
 let { i18n, style, getThirdparty } = require('./gulp/tasks');
 let config = require('./gulp/config.json');
@@ -32,7 +33,7 @@ gulp.task('clean', function () {
         .pipe(gulpClean({ force: true }));
 });
 
-gulp.task('style3rd', function () {
+gulp.task('style:3rd', function () {
     return gulp.src(getThirdparty('style'))
         .pipe(style())
         .pipe(cleanCss())
@@ -63,15 +64,15 @@ gulp.task('assets:img', function () {
     return gulp.src('./src/images/**/*')
         .pipe(gulp.dest('./dist/images/'));
 });
-gulp.task('assets:fa', function () {
-    return gulp.src('./node_modules/font-awesome/fonts/*')
-        .pipe(gulp.dest('./dist/fonts/'));
-});
 gulp.task('assets:fonts', function () {
-    return gulp.src('./src/fonts/**/*')
-        .pipe(gulp.dest('./dist/fonts/'));
+    return gulp.src('./src/font/**/*')
+        .pipe(gulp.dest('./dist/font/'));
 });
-gulp.task('assets', sequence(['assets:img', 'assets:fa', 'assets:fonts']));
+gulp.task('assets:font3rd', function() {
+    return gulp.src(getThirdparty('font'))
+        .pipe(gulp.dest('./dist/font'));
+})
+gulp.task('assets', sequence(['assets:img', 'assets:fonts', 'assets:font3rd']));
 
 gulp.task('i18n', function () {
     return gulp.src('./src/i18n/*.txt')
@@ -82,7 +83,23 @@ gulp.task('i18n', function () {
         }));
 });
 
-gulp.task('js3rd', function () {
+gulp.task('js:es6', function () {
+    return gulp.src( './src/es6/**/*')
+        .pipe(cached('jses6'))
+        .pipe( babel({
+            presets: [ 'es2015' ]
+        }))
+        .pipe(uglify())
+        .pipe(license(fs.readFileSync('misc/license-head.txt','utf-8')))
+        .pipe(rename({ suffix: '.min' }))
+        .pipe(sourcemaps.write('.'))
+        .pipe(gulp.dest('./dist/js/'))
+        .pipe(reload({
+            stream: true
+        }));
+})
+
+gulp.task('js:3rd', function () {
     return gulp.src(getThirdparty('js'))
         .pipe(rename({ suffix: '.min' }))
         .pipe(rename({ prefix: 'pre-' }))
@@ -162,7 +179,7 @@ gulp.task('sync', function () {
 //This should work and looks pretty good:
 gulp.task('default', sequence(
     'clean',
-    ['i18n', 'style3rd', 'js3rd'],
+    ['i18n', 'style:3rd', 'js:3rd', 'js:es6'],
     ['style', 'js', 'assets'],
     'directcopy',
     'inject'

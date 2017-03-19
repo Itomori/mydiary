@@ -2,10 +2,15 @@
 	"3rdparty": {
 		"base": "./node_modules/",
 		"js": [
-			"/jquery/dist/jquery.min.js"
+			"jquery/dist/jquery.min.js"
 		],
 		"style": [
-			"font-awesome/css/font-awesome.min.css"
+			"font-awesome/css/font-awesome.min.css",
+			"weather-icons/css/weather-icons.min.css"
+		],
+		"font": [
+			"font-awesome/fonts/*",
+			"weather-icons/font/*"
 		]
 	},
 	"preset-misc": {},
